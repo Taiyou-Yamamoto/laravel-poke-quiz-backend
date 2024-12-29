@@ -21,9 +21,9 @@ class ScoreController extends Controller
 
     public function get(){
         $responseData = [
-            '$quiz1' => Score::where('quiz_id', 1)->orderByDesc('score')->take(10)->get(),
-            '$quiz2 '=>Score::where('quiz_id', 2)->orderByDesc('score')->take(10)->get(),
-            '$quiz3' => Score::where('quiz_id', 3)->orderByDesc('score')->take(10)->get(),
+            'quiz1' => Score::where('quiz_id', 1)->orderByDesc('score')->take(10)->get(),
+            'quiz2 '=>Score::where('quiz_id', 2)->orderByDesc('score')->take(10)->get(),
+            'quiz3' => Score::where('quiz_id', 3)->orderByDesc('score')->take(10)->get(),
         ];
         return  response()->json($responseData);     
     }
