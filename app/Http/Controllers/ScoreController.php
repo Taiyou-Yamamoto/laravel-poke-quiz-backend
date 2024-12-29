@@ -9,9 +9,22 @@ class ScoreController extends Controller
 {
     public function post(Request $request){
         $validated = $request->validate([
-            'calculatedScore' => 'require|integer',
-            'quiz_id' => 'require|integer|min:0|'
+            'calculatedScore' => 'required|integer',
+            'quiz_id' => 'required|integer|min:0|'
         ]);
-        Score::create($validated);
+        Score::create([
+            'quiz_id' => $validated['quiz_id'],
+            'score' => $validated['calculatedScore'],
+        ]);
+
+    }
+
+    public function get(){
+        $responseData = [
+            '$quiz1' => Score::where('quiz_id', 1)->orderByDesc('score')->take(10)->get(),
+            '$quiz2 '=>Score::where('quiz_id', 2)->orderByDesc('score')->take(10)->get(),
+            '$quiz3' => Score::where('quiz_id', 3)->orderByDesc('score')->take(10)->get(),
+        ];
+        return  response()->json($responseData);     
     }
 }
