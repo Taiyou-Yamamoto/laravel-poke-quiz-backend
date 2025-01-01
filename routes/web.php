@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+// use App\Http\Controllers\ScoreController;
+// use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/get/{id}', [ScoreController::class, 'get']);
+// Route::post('/api/post', [ScoreController::class, 'post']);
