@@ -21,7 +21,7 @@ return [
 
     'allowed_origins' => [
         'http://localhost:3000',
-        'https://poke-quiz-bay.vercel.app/'
+        'https://poke-quiz-e2sej8w6r-taiyou-yamamotos-projects.vercel.app'
     ],
 
     'allowed_origins_patterns' => [],
