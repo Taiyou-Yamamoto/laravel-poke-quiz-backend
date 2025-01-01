@@ -19,7 +19,10 @@ return [
 
     'allowed_methods' => ['GET','POST'],
 
-    'allowed_origins' => ['http://localhost:3000'],
+    'allowed_origins' => [
+        'http://localhost:3000',
+        'https://poke-quiz-9cb315e1daf1.herokuapp.com/api'
+    ],
 
     'allowed_origins_patterns' => [],
 
